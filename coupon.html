@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>쿠폰함 | 네모</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+  <!-- 헤더 -->
+  <header class="header">
+    <nav class="nav">
+      <div class="nav-container">
+        <div class="nav-left">
+          <h1 class="logo">
+            <a href="index.html" class="logo-text">네모</a>
+          </h1>
+        </div>
+        <div class="nav-right">
+          <ul class="right-menu gap-2">
+            <li class="login">
+              <button id="profileButton">
+                <p>박건웅님</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" style="rotate: 180deg;">
+                  <path d="M12.9016 15.3011C13.2182 15.6178 13.5806 15.6888 13.9886 15.5141C14.3966 15.3395 14.6009 15.0268 14.6016 14.5761V9.42613C14.6016 8.97613 14.3972 8.66346 13.9886 8.48813C13.5799 8.3128 13.2176 8.3838 12.9016 8.70113L10.3016 11.3011C10.2016 11.4011 10.1266 11.5095 10.0766 11.6261C10.0266 11.7428 10.0016 11.8678 10.0016 12.0011C10.0016 12.1345 10.0266 12.2595 10.0766 12.3761C10.1266 12.4928 10.2016 12.6011 10.3016 12.7011L12.9016 15.3011Z" fill="#777d83"></path>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 메인 콘텐츠 -->
+  <main class="main coupon-main">
+    <div class="container">
+      <!-- 페이지 헤더 -->
+      <div class="page-header">
+        <h1 class="page-title">쿠폰함</h1>
+        <p class="page-subtitle">보유하고 계신 쿠폰을 확인하고 관리해보세요</p>
+      </div>
+
+      <!-- 탭 네비게이션 -->
+      <div class="tab-navigation">
+        <button class="tab-button active" id="tab-owned">보유쿠폰</button>
+        <button class="tab-button" id="tab-available">쿠폰받기</button>
+      </div>
+
+      <!-- 보유쿠폰 탭 -->
+      <div class="tab-content active" id="owned-coupons">
+        <div class="coupon-stats">
+          <div class="stat-item">
+            <span class="stat-number">3</span>
+            <span class="stat-label">사용가능 쿠폰</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">1</span>
+            <span class="stat-label">사용완료</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">0</span>
+            <span class="stat-label">기간만료</span>
+          </div>
+        </div>
+
+        <div class="coupon-list">
+          <!-- 사용가능한 쿠폰 -->
+          <div class="coupon-card available">
+            <div class="coupon-header">
+              <div class="coupon-discount">10%</div>
+              <div class="coupon-status">사용가능</div>
+            </div>
+            <div class="coupon-content">
+              <h3 class="coupon-title">프리미엄 광고 할인 쿠폰</h3>
+              <p class="coupon-desc">프리미엄 광고 첫 구매 시 10% 할인</p>
+              <div class="coupon-conditions">
+                <p class="condition">최소 주문금액: 100,000원</p>
+                <p class="expire-date">유효기간: 2025.08.31까지</p>
+              </div>
+            </div>
+            <div class="coupon-footer">
+              <button class="btn btn-primary coupon-use-btn">사용하기</button>
+            </div>
+          </div>
+
+          <div class="coupon-card available">
+            <div class="coupon-header">
+              <div class="coupon-discount">20,000원</div>
+              <div class="coupon-status">사용가능</div>
+            </div>
+            <div class="coupon-content">
+              <h3 class="coupon-title">첫 광고 시작 쿠폰</h3>
+              <p class="coupon-desc">첫 광고 등록 시 20,000원 할인</p>
+              <div class="coupon-conditions">
+                <p class="condition">최소 주문금액: 50,000원</p>
+                <p class="expire-date">유효기간: 2025.09.15까지</p>
+              </div>
+            </div>
+            <div class="coupon-footer">
+              <button class="btn btn-primary coupon-use-btn">사용하기</button>
+            </div>
+          </div>
+
+          <div class="coupon-card available">
+            <div class="coupon-header">
+              <div class="coupon-discount">5%</div>
+              <div class="coupon-status">사용가능</div>
+            </div>
+            <div class="coupon-content">
+              <h3 class="coupon-title">재구매 감사 쿠폰</h3>
+              <p class="coupon-desc">재구매 고객 대상 5% 할인</p>
+              <div class="coupon-conditions">
+                <p class="condition">최소 주문금액: 30,000원</p>
+                <p class="expire-date">유효기간: 2025.12.31까지</p>
+              </div>
+            </div>
+            <div class="coupon-footer">
+              <button class="btn btn-primary coupon-use-btn">사용하기</button>
+            </div>
+          </div>
+
+          <!-- 사용완료된 쿠폰 -->
+          <div class="coupon-card used">
+            <div class="coupon-header">
+              <div class="coupon-discount">15%</div>
+              <div class="coupon-status">사용완료</div>
+            </div>
+            <div class="coupon-content">
+              <h3 class="coupon-title">신규 가입 축하 쿠폰</h3>
+              <p class="coupon-desc">신규 가입 고객 대상 15% 할인</p>
+              <div class="coupon-conditions">
+                <p class="condition">최소 주문금액: 50,000원</p>
+                <p class="used-date">사용일: 2025.07.15</p>
+              </div>
+            </div>
+            <div class="coupon-footer">
+              <span class="used-label">사용완료</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 쿠폰받기 탭 -->
+      <div class="tab-content" id="available-coupons">
+        <div class="available-coupon-list">
+          <div class="coupon-card receivable">
+            <div class="coupon-header">
+              <div class="coupon-discount">30%</div>
+              <div class="coupon-status">받을 수 있음</div>
+            </div>
+            <div class="coupon-content">
+              <h3 class="coupon-title">특별 할인 쿠폰</h3>
+              <p class="coupon-desc">한정 특가! 모든 광고 상품 30% 할인</p>
+              <div class="coupon-conditions">
+                <p class="condition">최소 주문금액: 200,000원</p>
+                <p class="expire-date">발급 후 30일간 유효</p>
+              </div>
+            </div>
+            <div class="coupon-footer">
+              <button class="btn btn-secondary coupon-receive-btn">쿠폰 받기</button>
+            </div>
+          </div>
+
+          <div class="coupon-card receivable">
+            <div class="coupon-header">
+              <div class="coupon-discount">50,000원</div>
+              <div class="coupon-status">받을 수 있음</div>
+            </div>
+            <div class="coupon-content">
+              <h3 class="coupon-title">월말 특가 쿠폰</h3>
+              <p class="coupon-desc">월말 한정! 광고비 50,000원 할인</p>
+              <div class="coupon-conditions">
+                <p class="condition">최소 주문금액: 100,000원</p>
+                <p class="expire-date">발급 후 14일간 유효</p>
+              </div>
+            </div>
+            <div class="coupon-footer">
+              <button class="btn btn-secondary coupon-receive-btn">쿠폰 받기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 프로필 모달 (동일한 구조) -->
+  <div class="modal" id="profileModal">
+    <span class="close" id="modalClose">
+      <svg class="undefined align-top" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.0008 13.4008L7.10078 18.3008C6.91745 18.4841 6.68411 18.5758 6.40078 18.5758C6.11745 18.5758 5.88411 18.4841 5.70078 18.3008C5.51745 18.1174 5.42578 17.8841 5.42578 17.6008C5.42578 17.3174 5.51745 17.0841 5.70078 16.9008L10.6008 12.0008L5.70078 7.10078C5.51745 6.91745 5.42578 6.68411 5.42578 6.40078C5.42578 6.11745 5.51745 5.88411 5.70078 5.70078C5.88411 5.51745 6.11745 5.42578 6.40078 5.42578C6.68411 5.42578 6.91745 5.51745 7.10078 5.70078L12.0008 10.6008L16.9008 5.70078C17.0841 5.51745 17.3174 5.42578 17.6008 5.42578C17.8841 5.42578 18.1174 5.51745 18.3008 5.70078C18.4841 5.88411 18.5758 6.11745 18.5758 6.40078C18.5758 6.68411 18.4841 6.91745 18.3008 7.10078L13.4008 12.0008L18.3008 16.9008C18.4841 17.0841 18.5758 17.3174 18.5758 17.6008C18.5758 17.8841 18.4841 18.1174 18.3008 18.3008C18.1174 18.4841 17.8841 18.5758 17.6008 18.5758C17.3174 18.5758 17.0841 18.4841 16.9008 18.3008L12.0008 13.4008Z" fill="#18232d"></path>
+      </svg>
+    </span>
+    <div class="modal-content">
+      <div class="header login">
+        <div class="profile">
+          <div class="profile-photo-placeholder">👤</div>
+        </div>
+        <div class="user-button profile-title cursor-auto">
+          <span class="profile-text">박건웅님, 안녕하세요</span>
+          <span class="badge">중개업소</span>
+        </div>
+        <div class="modal-icons">
+          <button class="icon-button" id="couponButton">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21.5 9V7C21.5 5.89543 20.6046 5 19.5 5H4.5C3.39543 5 2.5 5.89543 2.5 7V9C3.60457 9 4.5 9.89543 4.5 11C4.5 12.1046 3.60457 13 2.5 13V15C2.5 16.1046 3.39543 17 4.5 17H19.5C20.6046 17 21.5 16.1046 21.5 15V13C20.3954 13 19.5 12.1046 19.5 11C19.5 9.89543 20.3954 9 21.5 9Z" stroke="#777d83" stroke-width="1.5"/>
+              <path d="M9.5 8.5V13.5M14.5 8.5V13.5" stroke="#777d83" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span class="icon-text">쿠폰함</span>
+          </button>
+          <button class="icon-button" id="cartButton">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V16.5M9 19.5C9.8 19.5 10.5 20.2 10.5 21S9.8 22.5 9 22.5 7.5 21.8 7.5 21 8.2 19.5 9 19.5ZM20 19.5C20.8 19.5 21.5 20.2 21.5 21S20.8 22.5 20 22.5 18.5 21.8 18.5 21 19.2 19.5 20 19.5Z" stroke="#777d83" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="icon-text">장바구니</span>
+          </button>
+        </div>
+      </div>
+      <div class="scrollable">
+        <div class="content">
+          <ul>
+            <li>
+              <a href="/agent/home">
+                <button type="button">
+                  <span>관리홈</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" style="rotate: 180deg;">
+                    <path d="M12.9016 15.3011C13.2182 15.6178 13.5806 15.6888 13.9886 15.5141C14.3966 15.3395 14.6009 15.0268 14.6016 14.5761V9.42613C14.6016 8.97613 14.3972 8.66346 13.9886 8.48813C13.5799 8.3128 13.2176 8.3838 12.9016 8.70113L10.3016 11.3011C10.2016 11.4011 10.1266 11.5095 10.0766 11.6261C10.0266 11.7428 10.0016 11.8678 10.0016 12.0011C10.0016 12.1345 10.0266 12.2595 10.0766 12.3761C10.1266 12.4928 10.2016 12.6011 10.3016 12.7011L12.9016 15.3011Z" fill="#434c54"></path>
+                  </svg>
+                </button>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/coupon.js"></script>
+</body>
+</html>

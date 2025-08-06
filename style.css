@@ -1,0 +1,222 @@
+body {
+  background: #F0EAE8;
+  font-family: 'Apple SD Gothic Neo', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #18232d;
+}
+
+.payment-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 32px 28px 40px 28px;
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: #F24B39;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.product-detail {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.product-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  background: #f0f0f0;
+}
+
+.product-name {
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+.product-desc {
+  color: #888;
+  font-size: 0.95rem;
+}
+
+.shipping-detail > div {
+  margin-bottom: 4px;
+  font-size: 0.98rem;
+}
+
+.coupon-point-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.98rem;
+}
+
+.point {
+  color: #F24B39;
+  font-weight: bold;
+}
+
+.summary-detail {
+  background: #f7f9fa;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.summary-row.total {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #F24B39;
+}
+
+.total-price {
+  font-size: 1.2rem;
+}
+
+.method-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px 0;
+  background: #f0f2f5;
+  border: none;
+  border-radius: 6px 6px 0 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tab.active {
+  background: #F24B39;
+  color: #fff;
+}
+
+.method-content {
+  background: #f7f9fa;
+  border-radius: 0 0 8px 8px;
+  padding: 18px 16px 10px 16px;
+  margin-bottom: 8px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+
+.form-row label {
+  font-size: 0.97rem;
+  color: #333;
+  margin-bottom: 2px;
+}
+
+.form-row input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.pay-btn-row {
+  text-align: right;
+  margin-top: 24px;
+}
+
+.pay-btn {
+  background: #F24B39;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 36px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.pay-btn:hover {
+  background: #E03D2C;
+}
+
+.main-title {
+  text-align: center;
+  margin-bottom: 36px;
+  color: #18232d;
+}
+
+.logo-section {
+  margin-bottom: 16px;
+}
+
+.nemo-logo {
+  height: 32px;
+  width: auto;
+}
+
+.main-title h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  color: #18232d;
+}
+
+.product-features {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.feature-tag {
+  background: #EDE4E1;
+  color: #5C636B;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .payment-container {
+    max-width: 98vw;
+    padding: 10px 2vw 20px 2vw;
+  }
+} 
