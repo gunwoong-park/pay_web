@@ -39,13 +39,13 @@
       <!-- 페이지 헤더 -->
       <div class="page-header">
         <h1 class="page-title">장바구니</h1>
-        <p class="page-subtitle">찜한 상품과 자주 구매한 상품을 확인해보세요</p>
+        <p class="page-subtitle">찜한 상품과 추천 상품을 확인해보세요</p>
       </div>
 
       <!-- 탭 네비게이션 -->
       <div class="tab-navigation">
         <button class="tab-button active" id="tab-wishlist">찜한상품</button>
-        <button class="tab-button" id="tab-frequent">자주산상품</button>
+        <button class="tab-button" id="tab-frequent">추천상품</button>
       </div>
 
       <!-- 찜한상품 탭 -->
@@ -164,109 +164,310 @@
         </div>
       </div>
 
-      <!-- 자주산상품 탭 -->
+      <!-- 추천상품 탭 -->
       <div class="tab-content" id="frequent-products">
         <div class="cart-stats">
           <div class="stat-item">
-            <span class="stat-number">8</span>
-            <span class="stat-label">구매 상품</span>
+            <span class="stat-number">10</span>
+            <span class="stat-label">추천 상품</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">5</span>
+            <span class="stat-label">할인 중</span>
           </div>
           <div class="stat-item">
             <span class="stat-number">3</span>
-            <span class="stat-label">이번 달 구매</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">12</span>
-            <span class="stat-label">총 구매 횟수</span>
+            <span class="stat-label">신규 상품</span>
           </div>
         </div>
 
         <div class="product-list">
-          <!-- 자주 산 상품 카드들 -->
-          <div class="product-card frequent-item">
-            <div class="purchase-count">
-              <span class="count-number">5</span>
-              <span class="count-label">회 구매</span>
-            </div>
+          <!-- 추천 상품 카드들 -->
+          <div class="product-card recommended-item">
             <div class="product-image">
-              <div class="image-placeholder">📸</div>
-              <button class="wishlist-btn" data-product-id="4">
+              <div class="image-placeholder">🎵</div>
+              <button class="wishlist-btn" data-product-id="11">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.03L12 21.35Z"/>
                 </svg>
               </button>
+              <div class="discount-badge">10% 할인</div>
             </div>
             <div class="product-info">
-              <h3 class="product-title">프리미엄 광고 - 상가 임대차</h3>
-              <p class="product-desc">최대 노출, 우선 검색으로 빠른 임대 성사</p>
-              <div class="product-location">서울시 강남구</div>
+              <h3 class="product-title">홍대입구 프리미엄 광고</h3>
+              <p class="product-desc">홍대 상권 핵심지역 광고 - 젊은층 타겟</p>
+              <div class="product-location">서울시 마포구 홍대입구역</div>
               <div class="product-price">
-                <span class="sale-price">425,000원</span>
+                <span class="original-price">420,000원</span>
+                <span class="sale-price">378,000원</span>
                 <span class="price-period">/월</span>
               </div>
-              <div class="last-purchase">마지막 구매: 2025.07.15</div>
+              <div class="product-tags">
+                <span class="tag">인기상품</span>
+                <span class="tag">할인중</span>
+              </div>
             </div>
             <div class="product-actions">
-              <button class="btn-action btn-secondary">재구매</button>
-              <button class="btn-action btn-primary">문의하기</button>
+              <button class="btn-action btn-secondary">문의하기</button>
+              <button class="btn-action btn-primary btn-small">구매하기</button>
             </div>
           </div>
 
-          <div class="product-card frequent-item">
-            <div class="purchase-count">
-              <span class="count-number">3</span>
-              <span class="count-label">회 구매</span>
-            </div>
+          <div class="product-card recommended-item">
             <div class="product-image">
-              <div class="image-placeholder">📸</div>
-              <button class="wishlist-btn" data-product-id="5">
+              <div class="image-placeholder">🏪</div>
+              <button class="wishlist-btn" data-product-id="12">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.03L12 21.35Z"/>
                 </svg>
               </button>
+              <div class="discount-badge">15% 할인</div>
             </div>
             <div class="product-info">
-              <h3 class="product-title">일반 광고 - 사무실 임대차</h3>
-              <p class="product-desc">기본 노출로 안정적인 임대 문의</p>
-              <div class="product-location">서울시 서초구</div>
+              <h3 class="product-title">명동 특화 광고</h3>
+              <p class="product-desc">명동 중심가 관광객 타겟 광고</p>
+              <div class="product-location">서울시 중구 명동</div>
               <div class="product-price">
-                <span class="sale-price">200,000원</span>
+                <span class="original-price">480,000원</span>
+                <span class="sale-price">408,000원</span>
                 <span class="price-period">/월</span>
               </div>
-              <div class="last-purchase">마지막 구매: 2025.06.28</div>
+              <div class="product-tags">
+                <span class="tag">프리미엄</span>
+                <span class="tag">할인중</span>
+              </div>
             </div>
             <div class="product-actions">
-              <button class="btn-action btn-secondary">재구매</button>
-              <button class="btn-action btn-primary">문의하기</button>
+              <button class="btn-action btn-secondary">문의하기</button>
+              <button class="btn-action btn-primary btn-small">구매하기</button>
             </div>
           </div>
 
-          <div class="product-card frequent-item">
-            <div class="purchase-count">
-              <span class="count-number">4</span>
-              <span class="count-label">회 구매</span>
-            </div>
+          <div class="product-card recommended-item">
             <div class="product-image">
-              <div class="image-placeholder">📸</div>
-              <button class="wishlist-btn" data-product-id="6">
+              <div class="image-placeholder">🌍</div>
+              <button class="wishlist-btn" data-product-id="13">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.03L12 21.35Z"/>
                 </svg>
               </button>
             </div>
             <div class="product-info">
-              <h3 class="product-title">빌딩 임대차 광고</h3>
-              <p class="product-desc">대형 빌딩 임대 전용 광고 서비스</p>
-              <div class="product-location">서울시 중구</div>
+              <h3 class="product-title">이태원 글로벌 광고</h3>
+              <p class="product-desc">이태원 국제거리 외국인 타겟</p>
+              <div class="product-location">서울시 용산구 이태원</div>
               <div class="product-price">
-                <span class="sale-price">1,200,000원</span>
+                <span class="sale-price">350,000원</span>
                 <span class="price-period">/월</span>
               </div>
-              <div class="last-purchase">마지막 구매: 2025.07.02</div>
+              <div class="product-tags">
+                <span class="tag">글로벌</span>
+                <span class="tag">추천상품</span>
+              </div>
             </div>
             <div class="product-actions">
-              <button class="btn-action btn-secondary">재구매</button>
-              <button class="btn-action btn-primary">문의하기</button>
+              <button class="btn-action btn-secondary">문의하기</button>
+              <button class="btn-action btn-primary btn-small">구매하기</button>
+            </div>
+          </div>
+
+          <div class="product-card recommended-item">
+            <div class="product-image">
+              <div class="image-placeholder">🏢</div>
+              <button class="wishlist-btn" data-product-id="14">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.03L12 21.35Z"/>
+                </svg>
+              </button>
+              <div class="discount-badge">8% 할인</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">잠실 타워팰리스 광고</h3>
+              <p class="product-desc">잠실 고급 주거지역 타겟</p>
+              <div class="product-location">서울시 송파구 잠실</div>
+              <div class="product-price">
+                <span class="original-price">380,000원</span>
+                <span class="sale-price">349,600원</span>
+                <span class="price-period">/월</span>
+              </div>
+              <div class="product-tags">
+                <span class="tag">고급주거</span>
+                <span class="tag">할인중</span>
+              </div>
+            </div>
+            <div class="product-actions">
+              <button class="btn-action btn-secondary">문의하기</button>
+              <button class="btn-action btn-primary btn-small">구매하기</button>
+            </div>
+          </div>
+
+          <div class="product-card recommended-item">
+            <div class="product-image">
+              <div class="image-placeholder">🏠</div>
+              <button class="wishlist-btn" data-product-id="15">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.03L12 21.35Z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">분당 신도시 광고</h3>
+              <p class="product-desc">분당 아파트 매매/전세 특화</p>
+              <div class="product-location">경기도 성남시 분당구</div>
+              <div class="product-price">
+                <span class="sale-price">320,000원</span>
+                <span class="price-period">/월</span>
+              </div>
+              <div class="product-tags">
+                <span class="tag">신도시</span>
+                <span class="tag">학군특화</span>
+              </div>
+            </div>
+            <div class="product-actions">
+              <button class="btn-action btn-secondary">문의하기</button>
+              <button class="btn-action btn-primary btn-small">구매하기</button>
+            </div>
+          </div>
+
+          <div class="product-card recommended-item">
+            <div class="product-image">
+              <div class="image-placeholder">🏬</div>
+              <button class="wishlist-btn" data-product-id="16">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.03L12 21.35Z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">용산 업무지구 광고</h3>
+              <p class="product-desc">용산 I'Park몰 인근 오피스텔</p>
+              <div class="product-location">서울시 용산구 한강로</div>
+              <div class="product-price">
+                <span class="sale-price">290,000원</span>
+                <span class="price-period">/월</span>
+              </div>
+              <div class="product-tags">
+                <span class="tag">오피스텔</span>
+                <span class="tag">교통편리</span>
+              </div>
+            </div>
+            <div class="product-actions">
+              <button class="btn-action btn-secondary">문의하기</button>
+              <button class="btn-action btn-primary btn-small">구매하기</button>
+            </div>
+          </div>
+
+          <div class="product-card recommended-item">
+            <div class="product-image">
+              <div class="image-placeholder">🏘️</div>
+              <button class="wishlist-btn" data-product-id="17">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.03L12 21.35Z"/>
+                </svg>
+              </button>
+              <div class="discount-badge">20% 할인</div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">마포구 원룸 특화</h3>
+              <p class="product-desc">마포구 대학가 원룸/투룸 전문</p>
+              <div class="product-location">서울시 마포구</div>
+              <div class="product-price">
+                <span class="original-price">220,000원</span>
+                <span class="sale-price">176,000원</span>
+                <span class="price-period">/월</span>
+              </div>
+              <div class="product-tags">
+                <span class="tag">대학가</span>
+                <span class="tag">할인중</span>
+              </div>
+            </div>
+            <div class="product-actions">
+              <button class="btn-action btn-secondary">문의하기</button>
+              <button class="btn-action btn-primary btn-small">구매하기</button>
+            </div>
+          </div>
+
+          <div class="product-card recommended-item">
+            <div class="product-image">
+              <div class="image-placeholder">💻</div>
+              <button class="wishlist-btn" data-product-id="18">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.03L12 21.35Z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">판교 테크노밸리 광고</h3>
+              <p class="product-desc">판교 IT단지 직장인 타겟</p>
+              <div class="product-location">경기도 성남시 분당구 판교</div>
+              <div class="product-price">
+                <span class="sale-price">360,000원</span>
+                <span class="price-period">/월</span>
+              </div>
+              <div class="product-tags">
+                <span class="tag">IT특화</span>
+                <span class="tag">고소득층</span>
+              </div>
+            </div>
+            <div class="product-actions">
+              <button class="btn-action btn-secondary">문의하기</button>
+              <button class="btn-action btn-primary btn-small">구매하기</button>
+            </div>
+          </div>
+
+          <div class="product-card recommended-item">
+            <div class="product-image">
+              <div class="image-placeholder">☕</div>
+              <button class="wishlist-btn" data-product-id="19">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.03L12 21.35Z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">성수동 핫플 광고</h3>
+              <p class="product-desc">성수동 카페거리 트렌디 매장</p>
+              <div class="product-location">서울시 성동구 성수동</div>
+              <div class="product-price">
+                <span class="sale-price">340,000원</span>
+                <span class="price-period">/월</span>
+              </div>
+              <div class="product-tags">
+                <span class="tag">힙플레이스</span>
+                <span class="tag">신규상품</span>
+              </div>
+            </div>
+            <div class="product-actions">
+              <button class="btn-action btn-secondary">문의하기</button>
+              <button class="btn-action btn-primary btn-small">구매하기</button>
+            </div>
+          </div>
+
+          <div class="product-card recommended-item">
+            <div class="product-image">
+              <div class="image-placeholder">⭐</div>
+              <button class="wishlist-btn" data-product-id="20">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.03L12 21.35Z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">강남역 프리미엄 광고</h3>
+              <p class="product-desc">강남역 근처 상가 임대차 광고</p>
+              <div class="product-location">서울시 강남구 강남역</div>
+              <div class="product-price">
+                <span class="sale-price">400,000원</span>
+                <span class="price-period">/월</span>
+              </div>
+              <div class="product-tags">
+                <span class="tag">베스트셀러</span>
+                <span class="tag">프리미엄</span>
+              </div>
+            </div>
+            <div class="product-actions">
+              <button class="btn-action btn-secondary">문의하기</button>
+              <button class="btn-action btn-primary btn-small">구매하기</button>
             </div>
           </div>
         </div>

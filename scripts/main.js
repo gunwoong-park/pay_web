@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // 장바구니 버튼 이벤트
     initCartButton();
 
+    // 비회원 견적 안내 모달 초기화
+    initNonMemberModal();
+
     // 중개사 회원가입 버튼 클릭 시 페이지 이동 방지
     const joinBtn = document.querySelector('a.btn.btn-secondary[href="payment.html"]');
     if (joinBtn) {
@@ -364,6 +367,97 @@ function initCartButton() {
             // 장바구니 페이지로 이동
             window.location.href = 'cart.html';
         });
+    }
+}
+
+// 비회원 견적 안내 모달 초기화
+function initNonMemberModal() {
+    const startAdBtn = document.getElementById('startAdBtn');
+    const startAdBtnFixed = document.getElementById('startAdBtnFixed');
+    const modal = document.getElementById('nonMemberModal');
+    const closeBtn = document.getElementById('closeNonMemberModal');
+    const closeBtnModal = document.getElementById('closeBtnModal');
+    
+    console.log('Non-member modal elements:', { 
+        startAdBtn, 
+        startAdBtnFixed, 
+        modal, 
+        closeBtn, 
+        closeBtnModal 
+    });
+    
+    if (!modal) {
+        console.error('Non-member modal not found');
+        return;
+    }
+    
+    // '지금 광고 시작하기' 버튼들 클릭 이벤트
+    if (startAdBtn) {
+        startAdBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Start Ad button clicked');
+            openNonMemberModal();
+        });
+    }
+    
+    if (startAdBtnFixed) {
+        startAdBtnFixed.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Fixed Start Ad button clicked');
+            openNonMemberModal();
+        });
+    }
+    
+    // 모달 닫기 버튼들
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            closeNonMemberModal();
+        });
+    }
+    
+    if (closeBtnModal) {
+        closeBtnModal.addEventListener('click', function(e) {
+            // 링크로 변경되어 기본 동작(페이지 이동) 허용
+            // 모달은 자동으로 닫힘 (페이지 이동으로 인해)
+        });
+    }
+    
+    // 모달 배경 클릭 시 닫기
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeNonMemberModal();
+        }
+    });
+    
+    // ESC 키로 모달 닫기
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('show')) {
+            closeNonMemberModal();
+        }
+    });
+    
+    // 모달 열기 함수
+    function openNonMemberModal() {
+        console.log('Opening non-member modal');
+        modal.style.display = 'flex';
+        requestAnimationFrame(() => {
+            modal.classList.add('show');
+        });
+        document.body.style.overflow = 'hidden';
+    }
+    
+    // 모달 닫기 함수
+    function closeNonMemberModal() {
+        console.log('Closing non-member modal');
+        modal.classList.remove('show');
+        setTimeout(() => {
+            modal.style.display = 'none';
+        }, 300);
+        document.body.style.overflow = '';
     }
 }
 

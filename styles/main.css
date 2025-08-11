@@ -319,11 +319,11 @@ body {
   }
 }
 
-.modal.show .modal-content {
+.modal.show .modal-content:not(.non-member-modal) {
   animation: slideIn 0.3s ease-out;
 }
 
-.modal.closing .modal-content {
+.modal.closing .modal-content:not(.non-member-modal) {
   animation: slideOut 0.3s ease-out;
 }
 
@@ -933,6 +933,27 @@ body {
   background: #F5F5F6;
 }
 
+/* CTA 버튼 (지금 광고 시작하기) 전용 스타일 */
+.contact-item.cta-item {
+  background-color: #FFFFFF !important;
+  border: 1px solid #EBEBEC;
+  color: #18232d;
+}
+
+.contact-item.cta-item:hover {
+  background: #FFFFFF !important;
+  border-color: #9CA3AF;
+}
+
+.contact-item.cta-item .contact-number {
+  color: #18232d;
+  font-weight: 600;
+}
+
+.contact-item.cta-item .contact-time {
+  color: #777d83;
+}
+
 .contact-icon {
   width: 24px;
   height: 24px;
@@ -1113,3 +1134,25 @@ body {
     font-size: 10px;
   }
 }
+
+/* ===== 비회원 견적 안내 모달 가운데 정렬 전용 오버라이드 ===== */
+#nonMemberModal.modal.show,
+#nonMemberModal.modal.closing {
+  justify-content: center !important;   /* 오른쪽 정렬 끊기 */
+  align-items: center !important;       /* 세로 중앙 */
+  padding: 20px !important;
+}
+
+/* 오른쪽 슬라이드 패널 스타일 무력화 + 카드형으로 변환 */
+#nonMemberModal .modal-content {
+  position: static !important;          /* fixed, right:0 제거 */
+  width: min(600px, 90vw) !important;
+  height: auto !important;
+  min-height: auto !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12) !important;
+  overflow-y: auto;
+  transform: none !important;
+}
+
+/* 애니메이션은 이미 :not(.non-member-modal)로 제외되어 있으니 그대로 두면 됨 */

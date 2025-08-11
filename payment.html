@@ -84,55 +84,63 @@
           </div>
         </section>
 
-        <!-- 2단계: 쿠폰 사용 -->
+        <!-- 2단계: 할인 혜택 -->
         <section class="payment-section">
           <div class="section-header">
             <div class="section-number">2</div>
-            <h2 class="section-title">쿠폰 사용</h2>
+            <h2 class="section-title">할인 혜택</h2>
           </div>
-          <div class="coupon-section">
-            <div class="coupon-available">
-              <div class="coupon-item">
-                <input type="radio" id="coupon1" name="coupon" value="10" data-discount="40000">
-                <label for="coupon1" class="coupon-label">
-                  <div class="coupon-badge">10%</div>
-                  <div class="coupon-info">
-                    <div class="coupon-name">신규 가입 할인 쿠폰</div>
-                    <div class="coupon-desc">첫 구매 시 10% 할인 (최대 4만원)</div>
+          <div class="duration-section">
+            <div class="duration-options">
+              <div class="duration-item">
+                <input type="radio" id="duration1" name="duration" value="1" data-discount="0" checked>
+                <label for="duration1" class="duration-label">
+                  <div class="duration-badge">1개월</div>
+                  <div class="duration-info">
+                    <div class="duration-name">단기 이용</div>
+                    <div class="duration-desc">할인 없음</div>
+                    <div class="duration-monthly">월 400,000원</div>
                   </div>
-                  <div class="coupon-discount">-40,000원</div>
+                  <div class="duration-discount">할인없음</div>
                 </label>
               </div>
               
-              <div class="coupon-item">
-                <input type="radio" id="coupon2" name="coupon" value="50000" data-discount="50000">
-                <label for="coupon2" class="coupon-label">
-                  <div class="coupon-badge">5만원</div>
-                  <div class="coupon-info">
-                    <div class="coupon-name">이벤트 할인 쿠폰</div>
-                    <div class="coupon-desc">특가 이벤트 5만원 할인</div>
+              <div class="duration-item">
+                <input type="radio" id="duration3" name="duration" value="3" data-discount="5">
+                <label for="duration3" class="duration-label">
+                  <div class="duration-badge">3개월</div>
+                  <div class="duration-info">
+                    <div class="duration-name">3개월 약정</div>
+                    <div class="duration-desc">5% 할인 혜택</div>
+                    <div class="duration-monthly">월 380,000원</div>
                   </div>
-                  <div class="coupon-discount">-50,000원</div>
+                  <div class="duration-discount">5% 할인</div>
                 </label>
               </div>
               
-              <div class="coupon-item">
-                <input type="radio" id="noCoupon" name="coupon" value="0" checked>
-                <label for="noCoupon" class="coupon-label">
-                  <div class="coupon-badge no-coupon">✕</div>
-                  <div class="coupon-info">
-                    <div class="coupon-name">쿠폰 사용 안함</div>
-                    <div class="coupon-desc">쿠폰을 사용하지 않습니다</div>
+              <div class="duration-item recommended">
+                <input type="radio" id="duration6" name="duration" value="6" data-discount="33">
+                <label for="duration6" class="duration-label">
+                  <div class="duration-badge">6개월</div>
+                  <div class="duration-info">
+                    <div class="duration-name">장기 이용</div>
+                    <div class="duration-desc big-discount">💥 33% 대폭 할인</div>
+                    <div class="duration-monthly">월 268,000원</div>
                   </div>
-                  <div class="coupon-discount">-0원</div>
+                  <div class="duration-discount">33% 할인</div>
                 </label>
+                <div class="recommended-badge">추천</div>
               </div>
             </div>
             
-            <div class="coupon-actions">
-              <button type="button" class="btn-coupon" id="viewCouponsBtn">
-                보유 쿠폰 확인하기
-              </button>
+            <div class="duration-info-text">
+              <div class="discount-callout">
+                <span class="callout-icon">💡</span>
+                <span class="callout-text">
+                  <strong>장기 약정할수록</strong> 더 많은 <strong>할인 혜택</strong>을 받을 수 있습니다.
+                  <span class="callout-badge">추천: 6개월</span>
+                </span>
+              </div>
             </div>
           </div>
         </section>
@@ -146,8 +154,12 @@
           <div class="payment-summary">
             <div class="summary-breakdown">
               <div class="summary-row">
-                <span>상품 금액</span>
-                <span class="amount">400,000원</span>
+                <span>기본 상품 금액</span>
+                <span class="amount" id="baseProductAmount">400,000원 × 1개월</span>
+              </div>
+              <div class="summary-row discount-row" id="durationDiscountRow" style="display: none;">
+                <span id="durationDiscountLabel">기간 할인 (5%)</span>
+                <span class="amount discount" id="durationDiscount">-0원</span>
               </div>
               <div class="summary-row discount-row">
                 <span>쿠폰 할인</span>
@@ -164,10 +176,74 @@
               </div>
             </div>
             
+            <!-- 인라인 쿠폰 선택 -->
+            <div class="coupon-inline">
+              <label for="couponSelect" class="coupon-inline__label">사용 가능한 금액 쿠폰</label>
+              <div class="coupon-inline__control">
+                <select id="couponSelect" class="coupon-inline__select">
+                  <!-- JS에서 옵션 주입 -->
+                </select>
+                <span id="couponInlineAmount" class="coupon-inline__amount">-0원</span>
+              </div>
+            </div>
+            
+            <!-- 쿠폰 사용 (레거시 - 숨김 처리) -->
+            <div class="coupon-section legacy-hidden">
+              <h4 class="coupon-section-title">쿠폰 사용</h4>
+              <div class="coupon-search">
+                <input type="text" class="coupon-input" id="couponCodeInput" placeholder="쿠폰 코드를 입력하세요">
+                <button type="button" class="coupon-apply-btn" id="applyCouponBtn">적용</button>
+              </div>
+              
+              <div class="available-coupons">
+                <div class="coupon-item">
+                  <input type="radio" id="coupon1" name="coupon" value="10" data-discount="40000">
+                  <label for="coupon1" class="coupon-label">
+                    <div class="coupon-badge">10%</div>
+                    <div class="coupon-info">
+                      <div class="coupon-name">신규 가입 할인 쿠폰</div>
+                      <div class="coupon-desc">첫 구매 시 10% 할인 (최대 4만원)</div>
+                    </div>
+                    <div class="coupon-discount">-40,000원</div>
+                  </label>
+                </div>
+                
+                <div class="coupon-item">
+                  <input type="radio" id="coupon2" name="coupon" value="50000" data-discount="50000">
+                  <label for="coupon2" class="coupon-label">
+                    <div class="coupon-badge">5만원</div>
+                    <div class="coupon-info">
+                      <div class="coupon-name">이벤트 할인 쿠폰</div>
+                      <div class="coupon-desc">특가 이벤트 5만원 할인</div>
+                    </div>
+                    <div class="coupon-discount">-50,000원</div>
+                  </label>
+                </div>
+                
+                <div class="coupon-item">
+                  <input type="radio" id="noCoupon" name="coupon" value="0" checked>
+                  <label for="noCoupon" class="coupon-label">
+                    <div class="coupon-badge no-coupon">✕</div>
+                    <div class="coupon-info">
+                      <div class="coupon-name">쿠폰 사용 안함</div>
+                      <div class="coupon-desc">쿠폰을 사용하지 않습니다</div>
+                    </div>
+                    <div class="coupon-discount">-0원</div>
+                  </label>
+                </div>
+              </div>
+              
+              <div class="coupon-actions">
+                <button type="button" class="btn-coupon" id="viewCouponsBtn">
+                  보유 쿠폰 확인하기
+                </button>
+              </div>
+            </div>
+            
             <!-- 정기결제 옵션 -->
             <div class="subscription-option">
               <div class="subscription-toggle">
-                <input type="checkbox" id="subscriptionCheckbox" class="subscription-checkbox">
+                <input type="checkbox" id="subscriptionCheckbox" class="subscription-checkbox" checked>
                 <label for="subscriptionCheckbox" class="subscription-label">
                   <div class="subscription-info">
                     <div class="subscription-title">
@@ -345,6 +421,6 @@
     </div>
   </div>
 
-  <script src="scripts/payment.js"></script>
+  <script src="scripts/payment_new.js"></script>
 </body>
 </html>
